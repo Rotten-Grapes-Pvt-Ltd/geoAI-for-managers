@@ -247,7 +247,7 @@ Leveraging existing authoritative GIS data reduces annotation effort, but only i
 
 ### Dedicated Image Annotation Platforms
 
-![Image](https://mintcdn.com/labelbox-1db23ff4/cAZSqWb47Qd3ouPH/images/docs/7916709-image.png?auto=format\&fit=max\&n=cAZSqWb47Qd3ouPH\&q=85\&s=872c5c1130400605d58965f98dabe737)
+![Image](assets/annotate.png)
 
 
 When new labels must be created, dedicated annotation tools are often used. These platforms allow users to draw polygons, bounding boxes, or pixel masks directly on imagery.
@@ -269,14 +269,6 @@ Annotation platforms enable structured, scalable labeling workflows, especially 
 
 ### Managing Annotation Quality
 
-![Image](https://userguide.deepq.ai/~gitbook/image?dpr=4\&quality=100\&sign=bbbdbde1\&sv=2\&url=https%3A%2F%2F2559985325-files.gitbook.io%2F~%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FEU1efCcxGpwM5PoOPuQP%252Fuploads%252Fgit-blob-c3c19c7b01d99a36e06cecfea9ac3e546a2d51c5%252FDeepCap_QC_1.png%3Falt%3Dmedia\&width=768)
-
-![Image](https://www.researchgate.net/publication/355222784/figure/fig1/AS%3A1079119701905409%401634293594623/Comparison-between-approaches-for-multi-annotator-model-ensemble-multi-label-and.ppm)
-
-![Image](https://img.yumpu.com/34471198/1/500x640/annotation-guidelines.jpg)
-
-![Image](https://www.researchgate.net/publication/382638405/figure/fig1/AS%3A11431281263607497%401722222667756/Human-Annotation-Guidelines.png)
-
 Annotation quality directly affects model performance. Inconsistent or inaccurate labels lead to unreliable models.
 
 Effective quality management includes:
@@ -292,55 +284,313 @@ Manager takeaway:
 Annotation is not just a drawing task; it is a governed process. Quality control mechanisms are essential to ensure that training data supports reliable model behavior.
 
 
+Good point — this section should expose managers to the **breadth of the ecosystem**, not just two names. Below is an expanded version with additional widely used open-source frameworks and geospatial ML libraries.
+
+
 ## Machine Learning Frameworks in GeoAI
+
+Behind every GeoAI application is a machine learning framework that performs the actual pattern learning. These frameworks are not GIS software; they are computational engines designed to train and run models at scale. On top of them, specialized geospatial libraries make it easier to work with imagery, tiles, and spatial metadata.
+
+For project managers, the key idea is that GeoAI solutions are typically built in layers: a general AI engine at the base and geospatial adaptations above it.
 
 ### Core Deep Learning Frameworks
 
-### Geospatial AI Libraries Built on ML Frameworks
+Most modern GeoAI development relies on a few widely adopted deep learning frameworks.
 
-## Cloud-Based Experimentation Environments
+PyTorch is popular in research and applied computer vision because of its flexibility and strong ecosystem of pretrained models.
 
-### Notebook Platforms for GeoAI
+TensorFlow is widely used in both research and production systems and supports large-scale deployment.
 
-### Benefits of Cloud-Based Workflows
+Keras provides a high-level interface (often running on top of TensorFlow) that simplifies building and training neural networks.
 
-## Where Model Training and Inference Happen
+These frameworks handle:
 
-### Training Environments vs Desktop GIS
+* Neural network design
+* Model training using large datasets
+* GPU acceleration
+* Saving and running trained models
 
-### Hardware and Compute Considerations (Conceptual)
-
-## Bringing AI Outputs Back into GIS
-
-### Loading Model Outputs into GIS
-
-### Visualization, Editing, and Validation
-
-## Sharing and Hosting GeoAI Results
-
-### Publishing Data Services
-
-### Web Mapping Frameworks for Visualization
-
-### 3D and Advanced Visualization Platforms
-
-## Example End-to-End Open-Source GeoAI Workflow
-
-### Using a Pretrained Model
-
-### Running Inference
-
-### GIS Integration
-
-### Publishing to the Web
-
-## Key Takeaways for Project Managers
-
-### What Teams Can Start Using Immediately
-
-### What Requires Specialized Support
+Manager takeaway:
+These are foundational AI platforms. Most GeoAI tools and solutions are built using one of these engines.
 
 ---
 
-If you approve this structure, next we’ll start writing the **first section**:
-**“The GeoAI Workflow at a Glance.”**
+### Geospatial AI Libraries Built on ML Frameworks
+
+
+![Image](https://www.researchgate.net/publication/347039040/figure/fig5/AS%3A973660345073664%401609150124721/Conceptual-diagram-of-tiling-process-used-to-create-training-and-validation-data-A.png)
+
+
+Geospatial AI libraries adapt core ML frameworks to work with satellite imagery, aerial photos, and other spatial data formats.
+
+[TorchGeo](https://github.com/torchgeo/torchgeo) extends PyTorch for geospatial datasets, spatial sampling, and metadata handling.
+
+[Raster Vision](https://rastervision.io/) provides an end-to-end workflow for training and running models on geospatial imagery.
+
+
+[MMDetection](https://mmdetection.readthedocs.io/en/latest/) and MMSegmentation are widely used computer vision libraries that are often adapted for remote sensing applications.
+
+[Detectron2](https://github.com/facebookresearch/detectron2), developed for object detection and segmentation, is also used in overhead imagery tasks such as building and vehicle detection.
+
+
+Manager takeaway:
+These libraries reduce development effort by providing tested model architectures and workflows tailored to imagery analysis. They allow technical teams to focus on data and problem design rather than low-level implementation.
+
+
+## Cloud-Based Experimentation Environments
+
+GeoAI development often requires software libraries, large datasets, and specialized hardware such as GPUs. Setting up such environments locally can be complex and time-consuming. Cloud-based platforms simplify this by providing ready-to-use computational environments accessible through a web browser.
+
+For project managers, these platforms lower entry barriers, support collaboration, and enable pilot projects without large upfront infrastructure investments.
+
+### Notebook Platforms for GeoAI
+
+![Image](https://jupyter.org/assets/homepage/labpreview.png)
+
+
+Notebook environments combine code, documentation, and results in a single interactive workspace. They are widely used in data science and GeoAI workflows.
+
+Google Colab provides free access to cloud-based notebooks with optional GPU acceleration. It is commonly used for training demos, testing pretrained models, and running small-scale experiments.
+
+Jupyter Notebook and JupyterLab are open-source platforms that can run locally or on cloud servers. Many research and operational teams use them for developing and sharing GeoAI workflows.
+
+These platforms allow users to:
+
+* Access cloud computing resources
+* Install and use geospatial and AI libraries
+* Share reproducible workflows with colleagues
+
+Manager takeaway:
+Notebook platforms are often the fastest way to start experimenting with GeoAI without complex software installation.
+
+### Benefits of Cloud-Based Workflows
+
+
+![Image](https://miro.medium.com/0%2ATRURh7cqy7JAL0J8.png)
+
+
+Cloud-based GeoAI workflows offer several operational advantages.
+
+Reduced setup complexity:
+Users do not need to configure complex local environments. Software libraries and dependencies can be preconfigured.
+
+Access to specialized hardware:
+Cloud platforms can provide GPUs and large memory resources that may not be available on standard office computers.
+
+Scalability:
+Compute resources can be increased when needed for large training jobs and reduced afterward to control costs.
+
+Collaboration:
+Teams can share notebooks and workflows, making it easier to reproduce results and transfer knowledge.
+
+Manager takeaway:
+Cloud environments support flexible experimentation and scaling. They are particularly useful for pilot projects, training, and collaborative development before investing in dedicated infrastructure.
+
+## Where Model Training and Inference Happen
+
+One of the most common misunderstandings in GeoAI projects is assuming that model training happens inside desktop GIS software. In reality, GIS platforms and AI training environments serve very different purposes.
+
+Understanding where computation occurs helps managers plan infrastructure, budgets, and team responsibilities more realistically.
+
+### Training Environments vs Desktop GIS
+
+Desktop GIS tools such as QGIS are primarily designed for visualization, editing, spatial analysis, and validation. They are not optimized for large-scale neural network training.
+
+Model training typically happens in environments built for high-performance computation, such as:
+
+* Cloud-based platforms with GPU support
+* Dedicated servers with specialized hardware
+* Notebook-based environments connected to remote compute resources
+
+After training, model outputs (such as classified rasters or extracted features) are brought back into GIS software for inspection, correction, and integration into mapping workflows.
+
+Manager takeaway:
+GIS platforms remain central to data preparation and validation, while AI environments handle the computationally intensive learning and prediction steps.
+
+### Hardware and Compute Considerations (Conceptual)
+
+
+![Image](https://images.openai.com/static-rsc-3/i7hU3LKYezoHGt_XSc5o94EAR6BrMx0LQLWqf4lgI7991tKwVk0OC_s73QNAj9ivj09nV4e0CEOH-aeTwTa8aBBZkWsVpvhbF3wTSS51mZc?purpose=fullsize)
+
+
+
+Training deep learning models requires substantial computational resources, especially when working with high-resolution imagery.
+
+Key concepts for managers:
+
+GPUs vs CPUs:
+Graphics Processing Units (GPUs) are designed for parallel numerical operations and significantly speed up deep learning training compared to standard CPUs.
+
+Memory requirements:
+High-resolution imagery and large training datasets require sufficient RAM and GPU memory to process data efficiently.
+
+Storage and data transfer:
+Large geospatial datasets must be stored and accessed efficiently. Slow data transfer can become a bottleneck even if compute power is available.
+
+Scaling strategies:
+Small pilot models may run on modest resources, but national-scale mapping often requires cloud infrastructure or high-performance computing clusters.
+
+Manager takeaway:
+Compute planning is a separate dimension from GIS software planning. Successful GeoAI projects align model complexity and data volume with appropriate hardware and cloud resources.
+
+
+## Bringing AI Outputs Back into GIS
+
+After a model has been trained and applied to imagery, its outputs must be integrated back into standard GIS environments. This step is critical because AI results are rarely used directly without review. They become part of the familiar GIS workflow where experts interpret, validate, and refine them.
+
+For managers, this stage connects advanced AI processing with existing operational mapping practices.
+
+### Loading Model Outputs into GIS
+
+![Image](https://www.qgistutorials.com/en/_images/226.png)
+
+GeoAI models typically produce outputs in common geospatial formats.
+
+These may include:
+
+* Classified raster maps (for example, land cover classes)
+* Probability maps indicating model confidence
+* Vector features such as building footprints or road lines
+
+Such outputs can be directly loaded into QGIS as GeoTIFF, shapefile, or GeoJSON layers. Once loaded, they behave like any other GIS dataset.
+
+Key considerations:
+
+* Ensuring coordinate systems match existing project data
+* Checking that spatial resolution aligns with base imagery
+* Managing large file sizes that may affect performance
+
+Manager takeaway:
+AI outputs are not separate from GIS — they become new spatial layers that can be stored, styled, and analyzed like traditional datasets.
+
+### Visualization, Editing, and Validation
+
+Once loaded into GIS, model outputs go through the same quality control processes as manually created data.
+
+Visualization:
+Symbology and classification tools help experts quickly identify obvious errors or unusual patterns.
+
+Editing:
+GIS tools allow manual correction of misclassified areas, refinement of feature boundaries, and removal of false detections.
+
+Validation:
+Comparing AI outputs with reference data, field observations, or higher-resolution imagery helps assess reliability. This stage may also include calculating accuracy statistics.
+
+Manager takeaway:
+Human expertise remains essential. GeoAI accelerates mapping, but final datasets often result from a combination of automated outputs and expert review.
+
+
+## Sharing and Hosting GeoAI Results
+
+GeoAI outputs create value only when they are accessible to decision-makers, analysts, and the public. After validation in GIS, results are typically published through web services and interactive applications. This stage integrates GeoAI into existing spatial data infrastructures.
+
+### Publishing Data Services
+
+Validated GeoAI outputs — such as classified rasters or extracted vector features — can be served as standard geospatial web services.
+
+GeoServer is widely used to publish layers through OGC services like WMS, WFS, and WMTS. These services allow AI-generated layers to be consumed by desktop GIS, dashboards, and web applications.
+
+Other open-source servers such as MapServer and TileServer GL are also used to deliver map tiles and vector data efficiently.
+
+Manager takeaway:
+GeoAI outputs fit naturally into existing spatial data infrastructures through standard web services.
+
+---
+
+### Web Mapping Frameworks for Visualization (2D)
+
+
+2D web mapping libraries are commonly used to display GeoAI outputs in browsers.
+
+Leaflet is lightweight and widely used for interactive maps that overlay AI-generated layers.
+
+OpenLayers provides more advanced GIS capabilities in the browser, including support for projections, WMS/WFS services, and vector editing.
+
+MapLibre GL JS supports high-performance vector tile rendering and is often used for large, dynamic datasets.
+
+Manager takeaway:
+2D libraries are ideal for dashboards, monitoring portals, and thematic map viewers that communicate GeoAI results to broad audiences.
+
+
+### 3D and Advanced Visualization Platforms
+
+
+![Image](https://miro.medium.com/1%2AgpyoB_dfmara_p5jBygupw.gif)
+
+
+
+Some GeoAI outputs benefit from 3D or advanced visual exploration, particularly in urban, terrain, and infrastructure contexts.
+
+Cesium enables interactive 3D globes and terrain visualization directly in the browser.
+
+deck.gl supports high-performance visualization of large geospatial datasets, including 3D layers and point clouds.
+
+Potree is widely used for viewing LiDAR and dense point clouds in a web browser.
+
+These tools help users explore building heights, terrain changes, and dense spatial datasets in ways that are difficult to understand in 2D alone.
+
+Manager takeaway:
+3D platforms enhance communication and analysis for complex spatial environments, especially in urban planning, infrastructure, and terrain-related applications.
+
+## Example End-to-End Open-Source GeoAI Workflow
+
+To make the GeoAI ecosystem concrete, it helps to see how different open-source components connect in a practical scenario. This example outlines a simplified workflow for extracting building footprints from satellite imagery and making the results available on the web.
+
+The goal is not to teach coding, but to show that a full pipeline — from model to map — can be implemented using freely available tools.
+
+### Using a Pretrained Model
+
+Instead of training a model from scratch, teams can start with a pretrained model designed for image segmentation.
+
+Repositories such as Hugging Face host models that can be adapted for overhead imagery tasks. Tools like samgeo make it easier to apply general segmentation models to geospatial imagery.
+
+In this stage:
+
+* A suitable pretrained model is selected
+* Sample satellite imagery is prepared
+* The model is configured for the target feature (e.g., buildings)
+
+Manager takeaway:
+Pretrained models reduce development time and are well suited for pilot projects and feasibility studies.
+
+### Running Inference
+
+Inference is the process of applying a trained model to new imagery to generate predictions.
+
+This step is often performed in a cloud notebook environment such as Google Colab, where imagery is processed tile by tile. The output may be a raster mask showing predicted building areas.
+
+Key outputs at this stage:
+
+* Raster prediction layers
+* Confidence or probability maps
+
+Manager takeaway:
+Inference converts imagery into machine-generated spatial information that can be further refined in GIS.
+
+### GIS Integration
+
+Model outputs are then brought into QGIS for review and refinement.
+
+Typical steps include:
+
+* Converting raster masks into vector polygons
+* Removing obvious false detections
+* Correcting boundaries and small errors
+* Comparing results with reference data or imagery
+
+This stage ensures that automated outputs meet mapping standards and are suitable for operational use.
+
+Manager takeaway:
+Human validation and editing remain essential parts of the GeoAI workflow.
+
+### Publishing to the Web
+
+![Image](https://ars.els-cdn.com/content/image/3-s2.0-B9780128191019000121-f12-01-9780128191019.jpg)
+
+Once validated, the final building layer can be published using GeoServer as a web service.
+
+A web application built with Leaflet can then display the extracted buildings alongside other GIS layers. This allows planners, analysts, and decision-makers to view and use the results in a browser.
+
+Manager takeaway:
+An end-to-end GeoAI pipeline can move from pretrained models to operational web maps using entirely open-source components.
+

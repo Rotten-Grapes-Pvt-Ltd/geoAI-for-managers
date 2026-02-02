@@ -27,7 +27,8 @@ site_author = "Krishna Lodha"
 # The site_url is the canonical URL for your site. When building online
 # documentation you should set this.
 # Read more: https://zensical.org/docs/setup/basics/#site_url
-#site_url = "https://www.example.com/"
+site_url = "https://rotten-grapes-pvt-ltd.github.io/geoAI-for-managers"
+repo_url = "https://github.com/Rotten-Grapes-Pvt-Ltd/geoAI-for-managers"
 
 # The copyright notice appears in the page footer and can contain an HTML
 # fragment.
@@ -49,7 +50,8 @@ nav = [
    "ai.md",
      "geoai.md",
       "data.md",
-      "tools.md"
+      "tools.md",
+      "operations.md"
 
 ]
 
@@ -303,8 +305,14 @@ toggle.name = "Switch to light mode"
 # ----------------------------------------------------------------------------
 # The "extra" section contains miscellaneous settings.
 # ----------------------------------------------------------------------------
-#[[project.extra.social]]
+[[project.extra.social]]
+icon = "fontawesome/brands/linkedin"
+link = "https://www.linkedin.com/in/krishnaglodha/"
+[[project.extra.social]]
 icon = "fontawesome/brands/github"
 link = "https://github.com/Rotten-Grapes-Pvt-Ltd/geoAI-for-managers"
+[[project.extra.social]]
+icon = "fontawesome/brands/instagram"
+link = "https://www.instagram.com/krishnaglodha/"
 
 

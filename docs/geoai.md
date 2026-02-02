@@ -4,12 +4,9 @@ icon: lucide/brain-cog
 
 # What is GeoAI? Concepts, History & Ecosystem
 
-
-
 ## The Evolution of Mapping and Spatial Analysis
 
 GeoAI is not a technological fashion — it is a response to **structural pressure in modern mapping operations**. To understand where GeoAI fits, we must look at how the *role of mapping agencies* has changed over time.
-
 
 ### Mapping Before Computers — The Era of Scarcity
 
