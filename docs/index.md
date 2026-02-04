@@ -46,8 +46,9 @@ This guide covers the complete GeoAI journey:
 1. **[AI Fundamentals](ai.md)** - Understanding AI, machine learning, and deep learning concepts
 2. **[GeoAI Concepts](geoai.md)** - What makes geospatial AI unique and where it's used today
 3. **[Data Preparation](data.md)** - The foundation of successful GeoAI (often 80% of the work)
-4. **[Tools & Platforms](tools.md)** - Open-source ecosystem and practical implementation
-5. **[Operations](operations.md)** - Scaling from pilot to enterprise production systems
+4. **[GeoAI Implementation](implementation.md)** - Core tasks, domain applications, and real-world examples
+5. **[Tools & Platforms](tools.md)** - Open-source ecosystem and practical implementation
+6. **[Operations](operations.md)** - Scaling from pilot to enterprise production systems
 
 ## Key Features
 
@@ -76,8 +77,9 @@ This guide covers the complete GeoAI journey:
 
 1. **New to AI?** Start with [AI Fundamentals](ai.md)
 2. **Familiar with AI but new to geospatial?** Jump to [GeoAI Concepts](geoai.md)
-3. **Planning a project?** Focus on [Data Preparation](data.md) and [Operations](operations.md)
+3. **Planning a project?** Focus on [Data Preparation](data.md) and [GeoAI Implementation](implementation.md)
 4. **Looking for tools?** Check out [Tools & Platforms](tools.md)
+5. **Ready to deploy?** Review [Operations](operations.md)
 
 ## Why This Matters Now
 

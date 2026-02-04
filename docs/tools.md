@@ -1,5 +1,5 @@
 ---
-icon: lucide/toolbox
+icon: lucide/dumbbell
 ---
 
 # Introduction to Open-Source GeoAI Tools & Platforms
